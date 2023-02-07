@@ -28,6 +28,11 @@ function cartReducer(state = initialState, action){
             }
         }
 
+        case "ADD_TO_DETAIL": {
+            let itemDetail = state.items.find(item => item.product.id === action.payload.id)
+            return itemDetail
+        }
+
         case "INC_ITEM_COUNT": {
             return{
                 ...state, 
